@@ -123,7 +123,7 @@ export class HousingService {
     console.log(`Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
   }
 
-  //methods ussing db.json
+  //methods using db.json
   async getAllHousingLocations(): Promise<IHousinglocation[]> {
     const data = await fetch(this.url);
     return await data.json() ?? [];
