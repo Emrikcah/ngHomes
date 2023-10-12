@@ -11,7 +11,8 @@ export class HousingService {
   constructor() { }
 
   //using with db.json
-  url = 'http://localhost:3000/locations';
+  url = 'https://nglocations.onrender.com';
+  // url = 'http://localhost:3000/locations';
 
   //static array of data
   // housingLocationList: IHousinglocation[] = [
