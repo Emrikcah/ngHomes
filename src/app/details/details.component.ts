@@ -57,17 +57,10 @@ export class DetailsComponent {
 
   constructor() {
 
-
-    const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
-  this.housingService.getHousingLocationById(housingLocationId).then(housingLocation => {
-    this.housingLocation = housingLocation;
-  });
-
-
     //used with the static data only
-    // const housingLocationId = Number(this.route.snapshot.params['id']);
-    // this.housingLocation =
-    //   this.housingService.getHousingLocationById(housingLocationId);
+    const housingLocationId = Number(this.route.snapshot.params['id']);
+    this.housingLocation =
+      this.housingService.getHousingLocationById(housingLocationId);
 
     }
     /**In the above code, the FormControls may return null. This code uses the nullish coalescing operator to default to empty string if the value is null. */

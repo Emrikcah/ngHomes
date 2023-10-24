@@ -74,7 +74,7 @@ export class HomeComponent {
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
   
-
+//Properties
   housingLocationList: IHousinglocation[] = [];
   /**The filteredLocationList hold the values that match the search criteria entered by the user.
 The filteredLocationList should contain the total set of housing locations values by default when the page loads. Update the constructor for the HomeComponent to set the value. */
@@ -82,6 +82,7 @@ The filteredLocationList should contain the total set of housing locations value
 
   housingService: HousingService = inject(HousingService);
 
+  //Methods
   filterResults(text: string) {
     if (!text) {
       this.filteredLocationList = this.housingLocationList;
@@ -92,17 +93,11 @@ The filteredLocationList should contain the total set of housing locations value
     );
   }
 
+  //Ctor
   constructor() {
-    this.housingService.getAllHousingLocations().then((housingLocationList: IHousinglocation[]) => {
-      this.housingLocationList = housingLocationList;
-      this.filteredLocationList = housingLocationList;
-    });
-
-
-
-
+   
     //syncronous version with static data
-    // this.housingLocationList = this.housingService.getAllHousingLocations();
-    // this.filteredLocationList = this.housingLocationList;
+    this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.filteredLocationList = this.housingLocationList;
   }
 }
